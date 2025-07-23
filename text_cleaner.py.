@@ -1,0 +1,20 @@
+import re
+
+# Sample Arabic text
+text = "ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ وَبَرَكَاتُهُ"
+
+# Remove diacritics
+diacritics_pattern = re.compile(r'[\u0617-\u061A\u064B-\u0652]')
+text_clean = re.sub(diacritics_pattern, '', text)
+
+# Remove punctuation
+punctuations_pattern = re.compile(r'[^\w\s]')
+text_clean = re.sub(punctuations_pattern, '', text_clean)
+
+# Split into words
+words = text_clean.split()
+unique_words = set(words)
+
+print("Cleaned Text:", text_clean)
+print("Total Words:", len(words))
+print("Unique Words:", len(unique_words))
