@@ -1,0 +1,11 @@
+# Arabic-English Dictionary
+dictionary = {
+    "سلام": "Peace",
+    "كتاب": "Book",
+    "مدرسة": "School",
+    "قلب": "Heart",
+    "سماء": "Sky"
+}
+
+word = input("Enter Arabic word: ")
+print("English meaning:", dictionary.get(word, "Word not found"))
